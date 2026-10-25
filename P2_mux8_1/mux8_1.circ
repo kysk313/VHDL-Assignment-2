@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.0.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v5.0.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#FPArithmetic" name="D"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="A"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="B"/>
+  <lib desc="#Soc" name="C"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+    <a name="showgrid" val="true"/>
+    <a name="simulate" val="true"/>
+    <a name="showghosts" val="true"/>
+    <a name="zoom" val="1.0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Poke Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <tool lib="8" name="Image"/>
+    <sep/>
+    <tool lib="0" name="Pin"><a name="tristate" val="false"/></tool>
+    <tool lib="0" name="Pin"><a name="facing" val="west"/><a name="output" val="true"/></tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <comp loc="(400,200)" name="mux8_1"></comp>
+    <comp lib="0" loc="(120,200)" name="Pin"><a name="label" val="a"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,220)" name="Pin"><a name="label" val="b"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,240)" name="Pin"><a name="label" val="c"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,260)" name="Pin"><a name="label" val="d"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,280)" name="Pin"><a name="label" val="e"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,300)" name="Pin"><a name="label" val="f"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,320)" name="Pin"><a name="label" val="g"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,340)" name="Pin"><a name="label" val="h"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,360)" name="Pin"><a name="label" val="ch"/><a name="width" val="3"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(460,200)" name="Pin"><a name="label" val="data"/><a name="width" val="1"/><a name="output" val="true"/><a name="facing" val="west"/></comp>
+    <wire from="(120,200)" to="(180,200)"/>
+    <wire from="(120,220)" to="(180,220)"/>
+    <wire from="(120,240)" to="(180,240)"/>
+    <wire from="(120,260)" to="(180,260)"/>
+    <wire from="(120,280)" to="(180,280)"/>
+    <wire from="(120,300)" to="(180,300)"/>
+    <wire from="(120,320)" to="(180,320)"/>
+    <wire from="(120,340)" to="(180,340)"/>
+    <wire from="(120,360)" to="(180,360)"/>
+    <wire from="(400,200)" to="(460,200)"/>
+  </circuit>
+  <vhdl appearance="logisim_evolution" name="mux8_1">--library and package
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+--entity
+entity mux8_1 is
+	port(
+		a,b,c,d,e,f,g,h :in std_logic;
+		ch :in std_logic_vector(2 downto 0);
+		data :out std_logic
+	);
+end entity mux8_1;
+
+--architecture
+architecture bhv of mux8_1 is
+begin
+	process(a,b,c,d,e,f,g,h,ch)
+	begin
+		case ch is
+			when "000" =&gt; data &lt;= a;
+			when "001" =&gt; data &lt;= b;
+			when "010" =&gt; data &lt;= c;
+			when "011" =&gt; data &lt;= d;
+			when "100" =&gt; data &lt;= e;
+			when "101" =&gt; data &lt;= f;
+			when "110" =&gt; data &lt;= g;
+			when "111" =&gt; data &lt;= h;
+			when others =&gt; data &lt;= '0';
+		end case;
+	end process;
+end architecture bhv;
+</vhdl>
+</project>
