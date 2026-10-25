@@ -12,7 +12,7 @@ Digital Logic Circuit Design · 김우준 (2023092479)
 | 2 | 8-to-1 Multiplexer | [mux8_1.vhd](P2_mux8_1/mux8_1.vhd) | [mux8_1.circ](P2_mux8_1/mux8_1.circ) |
 | 3 | 7-segment로 a, b, c, d, f, g 표시 | [led_letter.vhd](P3_led_letter/led_letter.vhd) | [led_letter.circ](P3_led_letter/led_letter.circ) |
 | 4 | 25인 투표기 (13표 이상이면 1) | [vote25.vhd](P4_vote25/vote25.vhd) | [vote25.circ](P4_vote25/vote25.circ) |
-| 5 | 13-bit 입력의 1 개수를 7-segment에 표시 (0~9, A~F, enable) | [count_led.vhd](P5_count_led/count_led.vhd) | [count_led.circ](P5_count_led/count_led.circ) |
+| 5 | 13-bit 입력의 1 개수를 7-segment에 표시 (0-9, A-F, enable) | [count_led.vhd](P5_count_led/count_led.vhd) | [count_led.circ](P5_count_led/count_led.circ) |
 
 - 보고서: [VHDL_Assignment_2_Report.pdf](VHDL_Assignment_2_Report.pdf)
 - 검증용 테스트벤치(GHDL): [testbench/](testbench)
