@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.0.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v5.0.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#FPArithmetic" name="D"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="A"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="B"/>
+  <lib desc="#Soc" name="C"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+    <a name="showgrid" val="true"/>
+    <a name="simulate" val="true"/>
+    <a name="showghosts" val="true"/>
+    <a name="zoom" val="1.0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Poke Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <tool lib="8" name="Image"/>
+    <sep/>
+    <tool lib="0" name="Pin"><a name="tristate" val="false"/></tool>
+    <tool lib="0" name="Pin"><a name="facing" val="west"/><a name="output" val="true"/></tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <comp loc="(560,300)" name="count_led"></comp>
+    <comp lib="0" loc="(280,300)" name="Pin"><a name="label" val="en"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="5" loc="(140,500)" name="DipSwitch"><a name="number" val="13"/></comp>
+    <comp lib="0" loc="(140,460)" name="Splitter"><a name="facing" val="south"/><a name="incoming" val="13"/><a name="fanout" val="13"/><a name="bit0" val="12"/><a name="bit1" val="11"/><a name="bit2" val="10"/><a name="bit3" val="9"/><a name="bit4" val="8"/><a name="bit5" val="7"/><a name="bit6" val="6"/><a name="bit7" val="5"/><a name="bit8" val="4"/><a name="bit9" val="3"/><a name="bit10" val="2"/><a name="bit11" val="1"/><a name="bit12" val="0"/></comp>
+    <comp lib="0" loc="(760,300)" name="Splitter"><a name="facing" val="north"/><a name="incoming" val="8"/><a name="fanout" val="8"/></comp>
+    <comp lib="5" loc="(920,130)" name="7-Segment Display"></comp>
+    <comp lib="0" loc="(820,210)" name="Tunnel"><a name="label" val="dp"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(790,210)" name="Tunnel"><a name="label" val="g"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(760,210)" name="Tunnel"><a name="label" val="f"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(730,210)" name="Tunnel"><a name="label" val="e"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(700,210)" name="Tunnel"><a name="label" val="d"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(670,210)" name="Tunnel"><a name="label" val="c"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(640,210)" name="Tunnel"><a name="label" val="b"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(610,210)" name="Tunnel"><a name="label" val="a"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(890,80)" name="Tunnel"><a name="label" val="g"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(920,80)" name="Tunnel"><a name="label" val="f"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(950,80)" name="Tunnel"><a name="label" val="a"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(980,80)" name="Tunnel"><a name="label" val="b"/><a name="facing" val="south"/></comp>
+    <comp lib="0" loc="(890,240)" name="Tunnel"><a name="label" val="e"/><a name="facing" val="north"/></comp>
+    <comp lib="0" loc="(920,240)" name="Tunnel"><a name="label" val="d"/><a name="facing" val="north"/></comp>
+    <comp lib="0" loc="(950,240)" name="Tunnel"><a name="label" val="c"/><a name="facing" val="north"/></comp>
+    <comp lib="0" loc="(980,240)" name="Tunnel"><a name="label" val="dp"/><a name="facing" val="north"/></comp>
+    <wire from="(280,300)" to="(340,300)"/>
+    <wire from="(560,300)" to="(590,300)"/>
+    <wire from="(590,300)" to="(590,330)"/>
+    <wire from="(590,330)" to="(760,330)"/>
+    <wire from="(760,330)" to="(760,300)"/>
+    <wire from="(150,500)" to="(150,480)"/>
+    <wire from="(160,500)" to="(160,480)"/>
+    <wire from="(170,500)" to="(170,480)"/>
+    <wire from="(180,500)" to="(180,480)"/>
+    <wire from="(190,500)" to="(190,480)"/>
+    <wire from="(200,500)" to="(200,480)"/>
+    <wire from="(210,500)" to="(210,480)"/>
+    <wire from="(220,500)" to="(220,480)"/>
+    <wire from="(230,500)" to="(230,480)"/>
+    <wire from="(240,500)" to="(240,480)"/>
+    <wire from="(250,500)" to="(250,480)"/>
+    <wire from="(260,500)" to="(260,480)"/>
+    <wire from="(270,500)" to="(270,480)"/>
+    <wire from="(140,460)" to="(140,320)"/>
+    <wire from="(140,320)" to="(340,320)"/>
+    <wire from="(750,280)" to="(750,270)"/>
+    <wire from="(750,270)" to="(820,270)"/>
+    <wire from="(820,270)" to="(820,210)"/>
+    <wire from="(740,280)" to="(740,260)"/>
+    <wire from="(740,260)" to="(790,260)"/>
+    <wire from="(790,260)" to="(790,210)"/>
+    <wire from="(730,280)" to="(730,250)"/>
+    <wire from="(730,250)" to="(760,250)"/>
+    <wire from="(760,250)" to="(760,210)"/>
+    <wire from="(720,280)" to="(720,240)"/>
+    <wire from="(720,240)" to="(730,240)"/>
+    <wire from="(730,240)" to="(730,210)"/>
+    <wire from="(710,280)" to="(710,240)"/>
+    <wire from="(710,240)" to="(700,240)"/>
+    <wire from="(700,240)" to="(700,210)"/>
+    <wire from="(700,280)" to="(700,250)"/>
+    <wire from="(700,250)" to="(670,250)"/>
+    <wire from="(670,250)" to="(670,210)"/>
+    <wire from="(690,280)" to="(690,260)"/>
+    <wire from="(690,260)" to="(640,260)"/>
+    <wire from="(640,260)" to="(640,210)"/>
+    <wire from="(680,280)" to="(680,270)"/>
+    <wire from="(680,270)" to="(610,270)"/>
+    <wire from="(610,270)" to="(610,210)"/>
+    <wire from="(920,130)" to="(920,120)"/>
+    <wire from="(920,120)" to="(890,120)"/>
+    <wire from="(890,120)" to="(890,80)"/>
+    <wire from="(930,130)" to="(930,110)"/>
+    <wire from="(930,110)" to="(920,110)"/>
+    <wire from="(920,110)" to="(920,80)"/>
+    <wire from="(940,130)" to="(940,110)"/>
+    <wire from="(940,110)" to="(950,110)"/>
+    <wire from="(950,110)" to="(950,80)"/>
+    <wire from="(950,130)" to="(950,120)"/>
+    <wire from="(950,120)" to="(980,120)"/>
+    <wire from="(980,120)" to="(980,80)"/>
+    <wire from="(920,190)" to="(920,200)"/>
+    <wire from="(920,200)" to="(890,200)"/>
+    <wire from="(890,200)" to="(890,240)"/>
+    <wire from="(930,190)" to="(930,210)"/>
+    <wire from="(930,210)" to="(920,210)"/>
+    <wire from="(920,210)" to="(920,240)"/>
+    <wire from="(940,190)" to="(940,210)"/>
+    <wire from="(940,210)" to="(950,210)"/>
+    <wire from="(950,210)" to="(950,240)"/>
+    <wire from="(950,190)" to="(950,200)"/>
+    <wire from="(950,200)" to="(980,200)"/>
+    <wire from="(980,200)" to="(980,240)"/>
+  </circuit>
+  <vhdl appearance="logisim_evolution" name="count_led">--library and package
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+--entity
+--display = a b c d e f g dp
+entity count_led is
+	port(
+		en :in std_logic;
+		vt :in std_logic_vector(13 downto 1);
+		display :out std_logic_vector(7 downto 0)
+	);
+end entity count_led;
+
+--architecture
+architecture bhv of count_led is
+begin
+	process(en,vt)
+	variable sum:integer range 0 to 15;
+	begin
+		sum:= 0;
+		for i in 1 to 13 loop
+			if (vt(i)='1') then
+				sum:=sum+1;
+			end if;
+		end loop;
+		if en='0' then
+			display &lt;= "ZZZZZZZZ";
+		else
+			case sum is
+				when 0 =&gt; display &lt;= "11111100";
+				when 1 =&gt; display &lt;= "01100000";
+				when 2 =&gt; display &lt;= "11011010";
+				when 3 =&gt; display &lt;= "11110010";
+				when 4 =&gt; display &lt;= "01100110";
+				when 5 =&gt; display &lt;= "10110110";
+				when 6 =&gt; display &lt;= "10111110";
+				when 7 =&gt; display &lt;= "11100000";
+				when 8 =&gt; display &lt;= "11111110";
+				when 9 =&gt; display &lt;= "11100110";
+				when 10 =&gt; display &lt;= "11101110";	--A
+				when 11 =&gt; display &lt;= "00111110";	--b
+				when 12 =&gt; display &lt;= "10011100";	--C
+				when 13 =&gt; display &lt;= "01111010";	--d
+				when 14 =&gt; display &lt;= "10011110";	--E
+				when 15 =&gt; display &lt;= "10001110";	--F
+				when others =&gt; display &lt;= "00000000";
+			end case;
+		end if;
+	end process;
+end architecture bhv;
+</vhdl>
+</project>
