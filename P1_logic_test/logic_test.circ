@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="5.0.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution v5.0.0(https://github.com/logisim-evolution/).
+
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2"/>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#FPArithmetic" name="D"/>
+  <lib desc="#Memory" name="4"/>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="A"/>
+  <lib desc="#TCL" name="7"/>
+  <lib desc="#Base" name="8"/>
+  <lib desc="#BFH-Praktika" name="9"/>
+  <lib desc="#Input/Output-Extra" name="B"/>
+  <lib desc="#Soc" name="C"/>
+  <main name="main"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+    <a name="showgrid" val="true"/>
+    <a name="simulate" val="true"/>
+    <a name="showghosts" val="true"/>
+    <a name="zoom" val="1.0"/>
+  </options>
+  <mappings>
+    <tool lib="8" map="Button2" name="Poke Tool"/>
+    <tool lib="8" map="Button3" name="Menu Tool"/>
+    <tool lib="8" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="8" name="Poke Tool"/>
+    <tool lib="8" name="Edit Tool"/>
+    <tool lib="8" name="Wiring Tool"/>
+    <tool lib="8" name="Text Tool"/>
+    <tool lib="8" name="Image"/>
+    <sep/>
+    <tool lib="0" name="Pin"><a name="tristate" val="false"/></tool>
+    <tool lib="0" name="Pin"><a name="facing" val="west"/><a name="output" val="true"/></tool>
+    <sep/>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+    <tool lib="1" name="XOR Gate"/>
+    <tool lib="1" name="NAND Gate"/>
+    <tool lib="1" name="NOR Gate"/>
+    <sep/>
+    <tool lib="4" name="D Flip-Flop"/>
+    <tool lib="4" name="Register"/>
+  </toolbar>
+  <circuit name="main">
+    <a name="circuit" val="main"/>
+    <comp loc="(400,200)" name="logic_test"></comp>
+    <comp lib="0" loc="(120,200)" name="Pin"><a name="label" val="a"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,220)" name="Pin"><a name="label" val="b"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,240)" name="Pin"><a name="label" val="c"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(120,260)" name="Pin"><a name="label" val="d"/><a name="width" val="1"/><a name="facing" val="east"/></comp>
+    <comp lib="0" loc="(460,200)" name="Pin"><a name="label" val="out1"/><a name="width" val="1"/><a name="output" val="true"/><a name="facing" val="west"/></comp>
+    <comp lib="0" loc="(460,220)" name="Pin"><a name="label" val="out2"/><a name="width" val="1"/><a name="output" val="true"/><a name="facing" val="west"/></comp>
+    <wire from="(120,200)" to="(180,200)"/>
+    <wire from="(120,220)" to="(180,220)"/>
+    <wire from="(120,240)" to="(180,240)"/>
+    <wire from="(120,260)" to="(180,260)"/>
+    <wire from="(400,200)" to="(460,200)"/>
+    <wire from="(400,220)" to="(460,220)"/>
+  </circuit>
+  <vhdl appearance="logisim_evolution" name="logic_test">--library and package
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+--entity
+entity logic_test is
+	port(
+		a,b,c,d :in std_logic;
+		out1,out2 :out std_logic
+	);
+end entity logic_test;
+
+--architecture
+architecture bhv of logic_test is
+begin
+	out1 &lt;= a and b and c and d;
+	out2 &lt;= a or b or c or d;
+end architecture bhv;
+</vhdl>
+</project>
